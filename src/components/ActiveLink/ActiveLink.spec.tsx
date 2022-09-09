@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { debug } from 'console';
 import { ActiveLink } from '.';
 
 // o Screen é uma maneira mais fácil de verificar se o componente está em tela.
@@ -35,5 +34,4 @@ describe('ActiveLink Components', () => {
     expect(screen.getByText('Home')).toHaveClass('active')
   })
 
-  debug()
 })
