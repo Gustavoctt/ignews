@@ -43,12 +43,12 @@ export default function Posts({posts}: PostsProps){
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
 
-  const response = await prismic.getByType("post", {
+  const response = await prismic.getAllByType("post", {
     pageSize: 100
   })
 
   //Formatando dados na hora que recebe do Prismic
-  const posts = response.results.map(post => {
+  const posts = response.map(post => {
     return {
       slug: post.uid,
       title: RichText.asText(post.data.title),
